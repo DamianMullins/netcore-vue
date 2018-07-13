@@ -9,7 +9,7 @@ const filePath = path.join(__dirname, '../../wwwroot/dist/bundle.server.js')
 const serverBundle = fs.readFileSync(filePath, 'utf8');
 const bundleRenderer = createBundleRenderer(serverBundle);
 
-module.exports = prerendering.createServerRenderer(function (params) {
+module.exports = prerendering.createServerRenderer(params => {
     return new Promise((resolve, reject) => {
         // params.data is the store's initial state. Sent by the asp-prerender-data attribute
         bundleRenderer.renderToString(params.data, (err, resultHtml) => {
