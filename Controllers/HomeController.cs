@@ -11,73 +11,48 @@ namespace netcore_vue.Controllers
     {
         public IActionResult Index()
         {
-            var initialMessages = FakeMessageStore.FakeMessages
-                .OrderByDescending(m => m.Date)
-                .Take(2);
-
-            var initialValues = new ClientState()
-            {
-                Messages = initialMessages,
-                LastFetchedMessageDate = initialMessages.Last().Date
-            };
-
-            return View(initialValues);
-        }
-
-        [Route("initialMessages")]
-        public JsonResult InitialMessages()
-        {
-            var initialMessages = FakeMessageStore.FakeMessages
-                .OrderByDescending(m => m.Date)
-                .Take(2);
-
-            var initialValues = new ClientState()
-            {
-                Messages = initialMessages,
-                LastFetchedMessageDate = initialMessages.Last().Date
-            };
-
-            return Json(initialValues);
-        }
-
-        [Route("fetchMessages")]
-        public JsonResult FetchMessages(DateTime lastFetchedMessageDate)
-        {
-            return Json(FakeMessageStore.FakeMessages
-                .OrderByDescending(m => m.Date)
-                .SkipWhile(m => m.Date >= lastFetchedMessageDate).Take(1));
+            var viewModel = GetMenuViewModel();
+            return View(viewModel);
         }
 
         [Route("api/menuItems")]
         public JsonResult MenuItems()
         {
-            var viewModel = new MenuViewModel
+            var viewModel = GetMenuViewModel();
+            return Json(viewModel);
+        }
+
+        private static MenuViewModel GetMenuViewModel() {
+            return new MenuViewModel
             {
                 Items = new List<Item> {
                     new Item {
+                        Id = 1,
                         Name = "Traditional Lemonade &amp; Mint",
                         Price = 2.39m
                     },
                     new Item {
+                        Id = 2,
                         Name = "Mojo Juice, Apple",
                         Price = 2.39m
                     },
                     new Item {
+                        Id = 3,
                         Name = "Mojo Juice, Mango",
                         Price = 2.39m
                     },
                     new Item {
+                        Id = 4,
                         Name = "Mojo Juice, Orange",
                         Price = 2.39m
                     },
                     new Item {
+                        Id = 5,
                         Name = "Tropical Lightning, Apple",
                         Price = 2.39m
                     }
                 }
             };
-
-            return Json(viewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

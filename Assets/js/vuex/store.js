@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { fetchInitialMessages, fetchMessages } from './actions';
-import minBy from 'lodash/minBy';
+import axios from 'axios';
 import {
     MENU_GET_ALL_ITEMS,
     BASKET_ADD_ITEM,
@@ -9,40 +8,6 @@ import {
     BASKET_INCREMENT_ITEM_QUANTITY,
     BASKET_DECREMENT_ITEM_QUANTITY
 } from './mutation-types';
-
-const menuItems = [
-    {
-        id: 1,
-        name: 'Traditional Lemonade &amp; Mint',
-        price: 2.39
-    },
-    {
-        id: 2,
-        name: 'Mojo Juice, Apple',
-        price: 2.39
-    },
-    {
-        id: 3,
-        name: 'Mojo Juice, Mango',
-        price: 2.39
-    },
-    {
-        id: 4,
-        name: 'Mojo Juice, Orange',
-        price: 2.39
-    },
-    {
-        id: 5,
-        name: 'Tropical Lightning, Apple',
-        price: 2.39
-    }
-];
-
-const getItems = () => new Promise(resolve => {
-    setTimeout(() => {
-        resolve(menuItems);
-    }, 1000);
-});
 
 const debug = process.env.NODE_ENV !== 'production';
 
@@ -69,28 +34,26 @@ const store = new Vuex.Store({
         messages: state => state.messages,
         lastFetchedMessageDate: state => state.lastFetchedMessageDate,
 
-        // basketItems: (state, getters, { menu }) =>
-        //     state.basket.items.map(({ id, quantity }) =>
-        //         ({
-        //             ...menu.items.find(item => item.id === id),
-        //             quantity
-        //         })),
+        basketItems: (state, getters, { menu }) =>
+            state.basket.items.map(({ id, quantity }) =>
+                ({
+                    ...menu.items.find(item => item.id === id),
+                    quantity
+                })),
 
-        // subtotal: (state, getters) => getters.basketItems
-        //     .reduce((total, item) => total + (item.price * item.quantity), 0),
+        subtotal: (state, getters) => getters.basketItems
+            .reduce((total, item) => total + (item.price * item.quantity), 0),
 
-        // total: (state, getters) => getters.subtotal + state.basket.deliveryFee
+        total: (state, getters) => getters.subtotal + state.basket.deliveryFee
     },
 
     actions: {
-        fetchInitialMessages,
-        fetchMessages,
-
         getAllMenuItems: ({ commit }) => {
-            menuApi.getItems()
-                .then(items => {
-                    commit(MENU_GET_ALL_ITEMS, items);
-                });
+            axios.get('api/menuItems').then(response => {
+                commit(MENU_GET_ALL_ITEMS, response.data.items);
+            }).catch(err => {
+                console.log(err);
+            });
         },
 
         addItem: ({ state, commit }, { id }) => {
@@ -115,16 +78,6 @@ const store = new Vuex.Store({
     },
 
     mutations: {
-        INITIAL_MESSAGES: (state, payload) => {
-            state.messages = payload.messages;
-            state.lastFetchedMessageDate = payload.lastFetchedMessageDate;
-        },
-        FETCH_MESSAGES: (state, payload) => {
-            state.messages = state.messages.concat(payload);
-            state.lastFetchedMessageDate = minBy(state.messages, 'date').date;
-        },
-
-
         [MENU_GET_ALL_ITEMS]: (state, items) => {
             state.menu.items = items;
         },

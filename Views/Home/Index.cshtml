@@ -1,11 +1,13 @@
-﻿@model netcore_vue.Models.ClientState
+﻿@model netcore_vue.Models.MenuViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
 
-@Model.LastFetchedMessageDate
-
-<div data-app asp-prerender-module="Assets/js/renderOnServer" asp-prerender-data="Model"></div>
+<div class="l-container">
+    <div class="l-content g g--stack--narrow g--gutter">
+        <div data-app asp-prerender-module="Assets/js/renderOnServer" asp-prerender-data="Model"></div>
+    </div>
+</div>
 
 @section Scripts {
     <script src="~/dist/bundle.client.js" asp-append-version="true"></script>
