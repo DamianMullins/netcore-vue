@@ -2,15 +2,14 @@ process.env.VUE_ENV = 'server';
 
 const fs = require('fs');
 const path = require('path');
+const prerendering = require('aspnet-prerendering');
 const { createBundleRenderer } = require('vue-server-renderer');
 
 const filePath = path.join(__dirname, '../../wwwroot/dist/bundle.server.js')
 const serverBundle = fs.readFileSync(filePath, 'utf8');
-const bundleRenderer = createBundleRenderer(serverBundle, {
-    runInNewContext: false
-});
+const bundleRenderer = createBundleRenderer(serverBundle);
 
-module.exports = function (params) {
+module.exports = prerendering.createServerRenderer(function (params) {
     return new Promise((resolve, reject) => {
         // params.data is the store's initial state. Sent by the asp-prerender-data attribute
         bundleRenderer.renderToString(params.data, (err, resultHtml) => {
@@ -27,4 +26,4 @@ module.exports = function (params) {
             });
         });
     });
-};
+});
