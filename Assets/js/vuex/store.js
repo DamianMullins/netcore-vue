@@ -23,7 +23,7 @@ const store = new Vuex.Store({
 
         basket: {
             items: [],
-            deliveryFee: 0.5
+            deliveryFee: 0
         }
     },
 
@@ -73,7 +73,6 @@ const store = new Vuex.Store({
 
     mutations: {
         [MENU_GET_ALL_ITEMS]: (state, { menu }) => {
-            console.log('MENU_GET_ALL_ITEMS: ', state)
             state.menu.items = menu.items;
         },
 

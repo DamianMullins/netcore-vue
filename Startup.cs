@@ -32,6 +32,10 @@ namespace netcore_vue
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddNodeServices(options =>
+            {
+                options.InvocationTimeoutMilliseconds = 5000;
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
