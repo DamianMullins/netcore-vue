@@ -55,7 +55,13 @@ namespace netcore_vue.Controllers
                     }
                 },
                 Basket = new Basket {
-                    DeliveryFee = 0.5m
+                    DeliveryFee = 0.5m,
+                    Items = new List<Item> {
+                        new Item {
+                            Id = 2,
+                            Quantity = 2
+                        }
+                    }
                 }
             };
         }
