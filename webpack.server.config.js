@@ -7,7 +7,7 @@ module.exports = {
     entry: path.join(__dirname, 'Assets/js/server.js'),
     output: {
         libraryTarget: 'commonjs2',
-        path: path.join(__dirname, 'wwwroot/dist'),
+        path: path.join(__dirname, 'wwwroot/dist/js'),
         filename: 'bundle.server.js'
     },
     module: {
