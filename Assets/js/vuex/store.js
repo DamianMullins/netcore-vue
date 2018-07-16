@@ -13,6 +13,17 @@ const debug = process.env.NODE_ENV !== 'production';
 
 Vue.use(Vuex);
 
+const state = {
+    menu: {
+        items: []
+    },
+
+    basket: {
+        items: [],
+        deliveryFee: 0
+    }
+};
+
 export const getters = {
     basketItems: (state, getters, { menu }) =>
         state.basket.items.map(({ id, quantity }) =>
@@ -93,22 +104,9 @@ export const mutations = {
 
 const store = new Vuex.Store({
     strict: debug,
-
-    state: {
-        menu: {
-            items: []
-        },
-
-        basket: {
-            items: [],
-            deliveryFee: 0
-        }
-    },
-
+    state,
     getters,
-
     actions,
-
     mutations
 });
 
