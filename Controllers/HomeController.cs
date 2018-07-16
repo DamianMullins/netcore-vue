@@ -25,32 +25,37 @@ namespace netcore_vue.Controllers
         private static MenuViewModel GetMenuViewModel() {
             return new MenuViewModel
             {
-                Items = new List<Item> {
-                    new Item {
-                        Id = 1,
-                        Name = "Traditional Lemonade &amp; Mint",
-                        Price = 2.39m
-                    },
-                    new Item {
-                        Id = 2,
-                        Name = "Mojo Juice, Apple",
-                        Price = 2.39m
-                    },
-                    new Item {
-                        Id = 3,
-                        Name = "Mojo Juice, Mango",
-                        Price = 2.39m
-                    },
-                    new Item {
-                        Id = 4,
-                        Name = "Mojo Juice, Orange",
-                        Price = 2.39m
-                    },
-                    new Item {
-                        Id = 5,
-                        Name = "Tropical Lightning, Apple",
-                        Price = 2.39m
+                Menu = new Menu {
+                    Items = new List<Item> {
+                        new Item {
+                            Id = 1,
+                            Name = "Traditional Lemonade &amp; Mint",
+                            Price = 2.39m
+                        },
+                        new Item {
+                            Id = 2,
+                            Name = "Mojo Juice, Apple",
+                            Price = 2.39m
+                        },
+                        new Item {
+                            Id = 3,
+                            Name = "Mojo Juice, Mango",
+                            Price = 2.39m
+                        },
+                        new Item {
+                            Id = 4,
+                            Name = "Mojo Juice, Orange",
+                            Price = 2.39m
+                        },
+                        new Item {
+                            Id = 5,
+                            Name = "Tropical Lightning, Apple",
+                            Price = 2.39m
+                        }
                     }
+                },
+                Basket = new Basket {
+                    DeliveryFee = 0.5m
                 }
             };
         }

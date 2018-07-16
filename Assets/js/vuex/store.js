@@ -17,9 +17,6 @@ const store = new Vuex.Store({
     strict: debug,
 
     state: {
-        messages: [],
-        lastFetchedMessageDate: -1,
-
         menu: {
             items: []
         },
@@ -31,9 +28,6 @@ const store = new Vuex.Store({
     },
 
     getters: {
-        messages: state => state.messages,
-        lastFetchedMessageDate: state => state.lastFetchedMessageDate,
-
         basketItems: (state, getters, { menu }) =>
             state.basket.items.map(({ id, quantity }) =>
                 ({
@@ -49,8 +43,8 @@ const store = new Vuex.Store({
 
     actions: {
         getAllMenuItems: ({ commit }) => {
-            axios.get('api/menuItems').then(response => {
-                commit(MENU_GET_ALL_ITEMS, response.data.items);
+            axios.get('/api/menuItems').then(response => {
+                commit(MENU_GET_ALL_ITEMS, response.data);
             }).catch(err => {
                 console.log(err);
             });
@@ -78,8 +72,9 @@ const store = new Vuex.Store({
     },
 
     mutations: {
-        [MENU_GET_ALL_ITEMS]: (state, items) => {
-            state.menu.items = items;
+        [MENU_GET_ALL_ITEMS]: (state, { menu }) => {
+            console.log('MENU_GET_ALL_ITEMS: ', state)
+            state.menu.items = menu.items;
         },
 
         [BASKET_ADD_ITEM]: (state, id) => {
