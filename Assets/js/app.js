@@ -2,18 +2,26 @@ import Vue from 'vue';
 import i18n from './i18n';
 import store from './vuex';
 import MenuItems from './components/MenuItems.vue';
+import Basket from './components/Basket.vue';
 
-const createApp = () => {
-    const app = new Vue({
+export const createApp = () => {
+
+    const menu = new Vue({
         i18n,
         store,
         render: h => h(MenuItems)
     });
-    return { app };
-}
 
-export {
-    createApp,
-    store,
-    i18n
-};
+    const basket = new Vue({
+        i18n,
+        store,
+        render: h => h(Basket)
+    });
+
+    return {
+        menu,
+        basket,
+        store,
+        i18n
+    };
+}

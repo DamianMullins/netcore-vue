@@ -12,7 +12,7 @@
         <div class="g-col g-span6">
             <div
                 data-menu
-                asp-prerender-module="Assets/js/renderOnServer"
+                asp-prerender-module="Assets/js/server.renderMenu"
                 asp-prerender-data="Model"></div>
         </div>
 
@@ -20,7 +20,10 @@
             <div class="c-basket">
                 <p class="c-basket-heading">Your order</p>
 
-                <div data-basket></div>
+                <div
+                    data-basket
+                    asp-prerender-module="Assets/js/server.renderBasket"
+                    asp-prerender-data="Model"></div>
 
 					<hr class="c-basket-separator">
 

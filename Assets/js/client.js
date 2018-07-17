@@ -1,20 +1,17 @@
 import Vue from 'vue';
-import { createApp, store, i18n } from './app';
-import Basket from './components/Basket.vue';
+import { createApp } from './app';
 import basketTotals from './components/basketTotals.vue';
 
-store.replaceState(__INITIAL_STATE__);
+const { menu, basket, store, i18n } = createApp();
 
-const { app } = createApp();
+// prime the store with server-initialized state.
+// the state is determined during SSR and inlined in the page markup.
+if (window.__INITIAL_STATE__) {
+  store.replaceState(window.__INITIAL_STATE__);
+}
 
-app.$mount('[data-menu]');
-
-new Vue({
-    el: '[data-basket]',
-    i18n,
-    store,
-    render: h => h(Basket)
-});
+menu.$mount('[data-menu]');
+basket.$mount('[data-basket]');
 
 new Vue({
     el: '[data-basket-totals]',
