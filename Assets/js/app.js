@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import i18n from './i18n';
-import store from './vuex/store';
+import store from './vuex';
 import MenuItems from './components/MenuItems.vue';
 
 const createApp = () => {

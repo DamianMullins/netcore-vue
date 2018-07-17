@@ -5,7 +5,7 @@ const path = require('path');
 const prerendering = require('aspnet-prerendering');
 const { createBundleRenderer } = require('vue-server-renderer');
 
-const filePath = path.join(__dirname, '../../wwwroot/dist/js/bundle.server.js')
+const filePath = path.join(__dirname, '../../wwwroot/js/bundle.server.js')
 const serverBundle = fs.readFileSync(filePath, 'utf8');
 const bundleRenderer = createBundleRenderer(serverBundle);
 

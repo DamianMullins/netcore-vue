@@ -5,8 +5,8 @@ module.exports = {
     mode: 'development',
     entry: { 'bundle.client.js': './Assets/js/client.js' },
     output: {
-        path: path.resolve(__dirname, 'wwwroot/dist/js'),
-        publicPath: '/dist/js/',
+        path: path.resolve(__dirname, 'wwwroot/js'),
+        publicPath: '/js/',
         filename: 'bundle.client.js'
     },
     module: {
