@@ -55,13 +55,15 @@ namespace netcore_vue.Controllers
                     }
                 },
                 Basket = new Basket {
+                    Address = "Tinsel Town- Demo, 1st Floor, Block 4, Imperial Place, Maxwell Road, AR51 1JN",
                     DeliveryFee = 0.5m,
                     Items = new List<Item> {
                         new Item {
                             Id = 2,
                             Quantity = 2
                         }
-                    }
+                    },
+                    DeliveryTime = "Delivery ASAP"
                 }
             };
         }

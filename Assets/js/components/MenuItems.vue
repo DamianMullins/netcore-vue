@@ -11,9 +11,9 @@ import MenuItem from './MenuItem.vue';
 export default {
   name: 'menu-items',
 
-  created() {
-    this.getAllMenuItems();
-  },
+  // created() {
+  //   this.getAllMenuItems();
+  // },
 
   components: {
       MenuItem
@@ -23,8 +23,8 @@ export default {
     ...mapState(["menu"])
   },
 
-  methods: {
-    ...mapActions(["getAllMenuItems"])
-  }
+  // methods: {
+  //   ...mapActions(["getAllMenuItems"])
+  // }
 };
 </script>

@@ -21,7 +21,6 @@ export const createApp = () => {
     return {
         menu,
         basket,
-        store,
-        i18n
+        store
     };
 }

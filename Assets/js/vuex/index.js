@@ -19,8 +19,10 @@ const state = {
     },
 
     basket: {
+        address: '',
         items: [],
-        deliveryFee: 0
+        deliveryFee: 0,
+        deliveryTime: ''
     }
 };
 

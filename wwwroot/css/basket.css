@@ -1,0 +1,121 @@
+.c-basket {
+  box-shadow: 0 0 0 1px #eaeaea;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.c-basket-separator {
+  margin: 8px 0;
+  border-top: solid 1px #eaeaea;
+}
+
+.c-basket-heading {
+  font-size: 20px;
+  font-size: 1.42857rem;
+  line-height: 1.2;
+  line-height: 1.4;
+  font-family: 'Ubuntu';
+  font-weight: 400;
+  color: #535353;
+  margin: 0 0 8px;
+  padding-left: 8px;
+  padding-top: 8px;
+  text-align: left;
+}
+
+.c-basket-totals .c-basket-row {
+  margin-bottom: 5px;
+}
+
+.c-basket-row {
+  display: flex;
+  flex-direction: row;
+  margin: 0 8px 16px;
+}
+.c-basket-row:last-child,
+.c-basket-row.c-basket-row--spaced {
+  margin-bottom: 16px;
+}
+.c-basket-row.is-disabled {
+  opacity: 0.5;
+}
+
+.c-basket-group .c-basket-row:last-child {
+  margin: 0 8px;
+}
+
+.c-basket-group.c-basket-group--spaced {
+  margin-bottom: 16px;
+}
+
+.c-basket-item {
+  flex-grow: 1;
+  overflow: hidden;
+  word-wrap: break-word;
+  padding: 5px;
+  margin: 0;
+}
+
+.c-basket-label {
+  color: #535353;
+}
+
+.c-basket-price {
+  text-align: right;
+  margin: 0;
+}
+
+.c-basket-total,
+.c-basket-subtotal {
+  color: #333;
+  font-family: 'Ubuntu';
+  font-weight: 500;
+}
+
+.c-basket-subtotal {
+  font-size: 16px;
+  font-size: 1.14286rem;
+  line-height: 1.5;
+}
+
+.c-basket-restaurantNote {
+  border: 1px solid #eaeaea;
+  border-left: 0;
+  border-right: 0;
+  font-style: italic;
+  margin: 0 auto;
+  padding: 10px 0;
+  width: 90%;
+}
+
+.c-basket-restaurantAddress {
+  width: 70%;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.c-basket-deliveryOrCollectionDetails {
+  margin: 0;
+  padding: 5px 10px 10px;
+}
+.c-basket-deliveryOrCollectionDetails .icon-deliveryOrCollection {
+  float: left;
+  margin-right: 5px;
+  fill: #ff9e16;
+  width: 20px;
+  height: 20px;
+}
+.c-basket-deliveryOrCollectionDetails .c-basket-deliveryEstimatedFor {
+  border-bottom: 1px dotted;
+  text-decoration: underline dotted;
+}
+
+.o-btn--small {
+  line-height: .5;
+}
+
+.o-btn--primary:hover:not(.o-btnLink),
+.o-btn--primary:active:not(.o-btnLink),
+.o-btn--primary:focus:not(.o-btnLink) {
+    background-color: #14427d;
+}

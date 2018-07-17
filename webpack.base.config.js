@@ -18,6 +18,18 @@ module.exports = {
                 loader: 'babel-loader',
                 include: __dirname,
                 exclude: /node_modules/
+            },
+            {
+                test: /\.svg$/,
+                loader: 'vue-svg-loader',
+                options: {
+                    svgo: {
+                        plugins: [
+                            { removeDoctype: true },
+                            { removeComments: true }
+                        ]
+                    }
+                }
             }
         ]
     },
