@@ -2,6 +2,10 @@
 
 This project is a proof of concept to prove that server side rendering is possible for multiple elements on a page, i.e. not a SPA application.
 
+## Requirements
+
+This application has been tested with [Node.JS version 8.11.3](https://nodejs.org/en/download/releases/), and [.Net Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1).
+
 ## Install
 
 1. Install dependencies with `yarn install` or `npm install`.
