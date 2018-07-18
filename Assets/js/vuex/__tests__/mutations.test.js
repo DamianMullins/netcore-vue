@@ -1,4 +1,4 @@
-import { mutations } from '../store';
+import { mutations } from '../';
 import {
     MENU_GET_ALL_ITEMS,
     BASKET_ADD_ITEM,

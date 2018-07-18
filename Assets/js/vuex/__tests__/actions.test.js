@@ -1,4 +1,4 @@
-import { actions } from '../store';
+import { actions } from '../';
 import {
     MENU_GET_ALL_ITEMS,
     BASKET_ADD_ITEM,
