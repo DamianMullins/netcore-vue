@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:client": "webpack --config webpack.client.config.js",
-    "build:menu": "webpack --config webpack.menu.config.js",
-    "build:basket": "webpack --config webpack.basket.config.js",
-    "build": "yarn build:client && yarn build:menu && yarn build:basket",
+    "build": "webpack",
     "test": "jest"
   },
   "author": "",

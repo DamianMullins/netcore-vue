@@ -49,7 +49,7 @@ namespace netcore_vue
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
                     HotModuleReplacement = true,
-                    ConfigFile = "webpack.client.config.js"
+                    ConfigFile = "webpack.config.js"
                 });
             }
             else
