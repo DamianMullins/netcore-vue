@@ -54,7 +54,7 @@ describe('actions', () => {
     });
 
     describe('addItem', () => {
-        it(`commit is not called when item id property is not present in payload`, () => {
+        it('commit is not called when item id property is not present in payload', () => {
             // Arrange
             const { addItem } = actions;
             const commit = jest.fn();
@@ -102,7 +102,7 @@ describe('actions', () => {
     });
 
     describe('removeItem', () => {
-        it(`commit is not called when item quantity property is not present in payload`, () => {
+        it('commit is not called when item quantity property is not present in payload', () => {
             // Arrange
             const { removeItem } = actions;
             const commit = jest.fn();
