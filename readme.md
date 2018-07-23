@@ -6,13 +6,21 @@ This project is a proof of concept to prove that server side rendering is possib
 
 This application has been tested with [Node.JS version 8.11.3](https://nodejs.org/en/download/releases/), and [.Net Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1).
 
-## Install
+## Running the website
 
-1. Install dependencies with `yarn install` or `npm install`.
+- Install dependencies with `yarn install` or `npm install`.
 
-1. Compile required bundle with `yarn build`.
+### Local Development
 
-1. Compile and run the .Net Core application with `dotnet build && dotnet run`.
+To run the website in development mode run `yarn dev`.
+
+When running the website this will output warnings and display error messages from Vue.js as well as allow the use of [the Vue.js devtools](https://github.com/vuejs/vue-devtools).
+
+### Production Build
+
+To run the website in production mode run `yarn prod`.
+
+This will build the required assets and the run the website in production mode. No warnings or error messages will be displayed, and [the Vue.js devtools](https://github.com/vuejs/vue-devtools) will be disabled.
 
 ## Unit tests
 
