@@ -14,10 +14,6 @@ This application has been tested with [Node.JS version 8.11.3](https://nodejs.or
 
 1. Compile and run the .Net Core application with `dotnet build && dotnet run`.
 
-<div align="center">
-<img alt="Installing project dependecies" src="./install.svg" />
-</div>
-
 ## Unit tests
 
 The unit tests are written using the Jest framework.
