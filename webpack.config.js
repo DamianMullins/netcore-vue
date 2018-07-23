@@ -4,7 +4,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = env => {
     const sharedConfig = {
-        mode: 'development',
+        mode: env && env === 'prod' ? 'production' : 'development',
         output: {
             filename: '[name].js',
             path: path.join(__dirname, 'wwwroot/js'),

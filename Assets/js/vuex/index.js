@@ -27,8 +27,8 @@ const state = {
 };
 
 export const getters = {
-    basketItems: (state, getters, { menu }) =>
-        state.basket.items.map(({ id, quantity }) =>
+    basketItems: ({ basket, menu }) =>
+        basket.items.map(({ id, quantity }) =>
             ({
                 ...menu.items.find(item => item.id === id),
                 quantity
@@ -37,7 +37,7 @@ export const getters = {
     subtotal: (state, getters) => getters.basketItems
         .reduce((total, item) => total + (item.price * item.quantity), 0),
 
-    total: (state, getters) => getters.subtotal + state.basket.deliveryFee
+    total: ({ basket }, getters) => getters.subtotal + basket.deliveryFee
 };
 
 export const actions = {

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getters basketItems gets basket items with correct properties 1`] = `
+Array [
+  Object {
+    "id": 2,
+    "name": "Two",
+    "price": 2.22,
+    "quantity": 2,
+  },
+]
+`;
