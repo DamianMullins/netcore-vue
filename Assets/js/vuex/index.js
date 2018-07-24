@@ -15,6 +15,7 @@ Vue.use(Vuex);
 
 const state = {
     menu: {
+        restaurantName: '',
         items: []
     },
 
@@ -41,8 +42,12 @@ export const getters = {
 };
 
 export const actions = {
-    getAllMenuItems: ({ commit }) => {
-        return axios.get('/api/menuItems').then(response => {
+    getAllMenuItems: ({ state, commit }) => {
+        return axios.get('/api/menuItems', {
+            params: {
+                restaurantName: state.menu.restaurantName
+            }
+        }).then(response => {
             commit(MENU_GET_ALL_ITEMS, response.data);
         }).catch(err => {
             console.log(err);

@@ -9,23 +9,25 @@ namespace netcore_vue.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        [Route("{restaurantName?}")]
+        public IActionResult Index(string restaurantName = "Test")
         {
-            var viewModel = GetMenuViewModel();
+            var viewModel = GetMenuViewModel(restaurantName);
             return View(viewModel);
         }
 
         [Route("api/menuItems")]
-        public JsonResult MenuItems()
+        public JsonResult MenuItems(string restaurantName = "Test")
         {
-            var viewModel = GetMenuViewModel();
+            var viewModel = GetMenuViewModel(restaurantName);
             return Json(viewModel);
         }
 
-        private static MenuViewModel GetMenuViewModel() {
+        private static MenuViewModel GetMenuViewModel(string restaurantName) {
             return new MenuViewModel
             {
                 Menu = new Menu {
+                    RestaurantName = restaurantName,
                     Items = new List<Item> {
                         new Item {
                             Id = 1,
