@@ -10,7 +10,7 @@ namespace netcore_vue.Controllers
     public class HomeController : Controller
     {
         [Route("{restaurantName?}")]
-        public IActionResult Index(string restaurantName = "Test")
+        public IActionResult Index(string restaurantName = "Test Restaurant")
         {
             var viewModel = GetMenuViewModel(restaurantName);
             return View(viewModel);

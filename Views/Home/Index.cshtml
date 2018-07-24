@@ -10,7 +10,7 @@
 <div class="l-container">
     <div class="l-content g g--stack--narrow g--gutter">
         <div class="g-col g-span6">
-            <cache expires-after="@TimeSpan.FromSeconds(10)" vary-by="@this.Context.Request.Path">
+            <cache expires-after="@TimeSpan.FromSeconds(10)" vary-by-route="restaurantName">
                 <div
                     data-menu
                     asp-prerender-module="Assets/js/server.renderMenu"
@@ -24,7 +24,7 @@
             <div class="c-basket">
                 <p class="c-basket-heading">Your order</p>
 
-                <cache expires-after="@TimeSpan.FromSeconds(10)" vary-by="@this.Context.Request.Path">
+                <cache expires-after="@TimeSpan.FromSeconds(10)" vary-by-route="restaurantName">
                     <div
                         data-basket
                         asp-prerender-module="Assets/js/server.renderBasket"
