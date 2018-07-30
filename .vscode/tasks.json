@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/netcore-vue.csproj"
+                "${workspaceFolder}/Vue.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
