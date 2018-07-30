@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using netcore_vue.Models;
+using Vue.Models;
 
-namespace netcore_vue.Controllers
+namespace Vue.Controllers
 {
     public class HomeController : Controller
     {

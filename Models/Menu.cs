@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace netcore_vue.Models
+namespace Vue.Models
 {
     public class Menu
     {

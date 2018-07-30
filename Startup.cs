@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace netcore_vue
+namespace Vue
 {
     public class Startup
     {

@@ -1,7 +1,7 @@
 <template>
 <section class="g c-listing-item">
     <div class="g-col g-span9">
-        <p class="c-listing-item-text" v-html="item.name">{{ item.name }}</p>
+        <p class="c-listing-item-text" v-html="item.name"></p>
         <p class="c-listing-item-text">{{ $n(item.price, 'currency') }}</p>
     </div>
     <div class="g-col g-span3 text-right">

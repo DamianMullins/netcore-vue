@@ -1,6 +1,6 @@
 using System;
 
-namespace netcore_vue.Models
+namespace Vue.Models
 {
     public class ErrorViewModel
     {

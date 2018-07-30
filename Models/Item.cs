@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace netcore_vue.Models
+namespace Vue.Models
 {
     public class Item
     {

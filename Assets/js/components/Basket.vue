@@ -2,17 +2,17 @@
 <div>
     <basket-item v-for="item in basketItems" :key="item.name" :item="item" />
 
-    <hr class="c-basket-separator">
+    <hr class="c-basket-separator" />
 
     <basket-totals />
 
-    <hr class="c-basket-separator">
+    <hr class="c-basket-separator" />
 
     <p class="c-basket-restaurantAddress">
       {{ basket.address }}
     </p>
 
-    <hr class="c-basket-separator">
+    <hr class="c-basket-separator" />
 
     <p class="c-basket-deliveryOrCollectionDetails">
         <DeliveryIcon class="icon-deliveryOrCollection" />

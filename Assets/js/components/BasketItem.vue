@@ -21,9 +21,7 @@ export default {
   methods: {
     ...mapActions(["removeItem"]),
 
-    itemTotal(item) {
-      return item.price * item.quantity;
-    }
+    itemTotal: item => item.price * item.quantity
   }
 };
 </script>
