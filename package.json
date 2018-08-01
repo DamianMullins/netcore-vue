@@ -62,9 +62,6 @@
     },
     "snapshotSerializers": [
       "jest-serializer-vue"
-    ],
-    "setupFiles": [
-      "./jestSetup.js"
     ]
   }
 }
