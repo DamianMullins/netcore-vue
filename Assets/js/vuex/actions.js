@@ -8,17 +8,14 @@ import {
 } from './mutation-types';
 
 export default {
-    getAllMenuItems: ({ state, commit }) => {
-        return axios.get('/api/menuItems', {
-            params: {
-                restaurantName: state.menu.restaurantName
-            }
+    getAllMenuItems: ({ state, commit }) => axios
+        .get('/api/menuItems', {
+            params: { restaurantName: state.menu.restaurantName }
         }).then(response => {
             commit(MENU_GET_ALL_ITEMS, response.data);
         }).catch(err => {
             console.log(err);
-        });
-    },
+        }),
 
     addItem: ({ state, commit }, { id }) => {
         if (!id) return;

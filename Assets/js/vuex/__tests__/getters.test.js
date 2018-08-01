@@ -1,4 +1,4 @@
-import { getters } from '../';
+import getters from '../getters';
 
 describe('getters', () => {
     const state = {

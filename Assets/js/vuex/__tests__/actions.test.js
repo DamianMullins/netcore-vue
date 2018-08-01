@@ -1,4 +1,4 @@
-import { actions } from '../';
+import actions from '../actions';
 import {
     MENU_GET_ALL_ITEMS,
     BASKET_ADD_ITEM,
@@ -24,9 +24,10 @@ describe('actions', () => {
             // Arrange
             const { getAllMenuItems } = actions;
             const commit = jest.fn();
+            const state = { menu: { restaurantName: '' } };
 
             // Act
-            const result = getAllMenuItems({ commit });
+            const result = getAllMenuItems({ commit, state });
 
             // Assert
             result.then(() => {
@@ -42,9 +43,10 @@ describe('actions', () => {
             const commit = (state, payload) => {
                 data = payload;
             };
+            const state = { menu: { restaurantName: '' } };
 
             // Act
-            const result = getAllMenuItems({ commit });
+            const result = getAllMenuItems({ commit, state });
 
             // Assert
             result.then(() => {
