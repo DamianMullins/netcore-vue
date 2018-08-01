@@ -4,7 +4,7 @@ This project is a proof of concept to prove that server side rendering is possib
 
 ## Requirements
 
-This application has been tested with [Node.JS version 8.11.3](https://nodejs.org/en/download/releases/), and [.Net Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1).
+This application requires [Node.JS version 8.11.3](https://nodejs.org/dist/latest-v8.x/), and [.Net Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1).
 
 ## Running the website
 
