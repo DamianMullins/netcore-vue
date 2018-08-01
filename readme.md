@@ -1,4 +1,4 @@
-# ASP.NET Core 2 & Vue.JS 2.5 with Server Side Rendering
+# ASP.NET Core 2 web application with Vue.JS 2.5 and Server Side Rendering
 
 This project is a proof of concept to prove that server side rendering is possible for multiple elements on a page, i.e. not a SPA application.
 
@@ -12,13 +12,13 @@ This application has been tested with [Node.JS version 8.11.3](https://nodejs.or
 
 ### Local Development
 
-To run the website in development mode run `yarn dev`.
+To run the website in development mode run `yarn dev` or `npm run dev`.
 
 When running the website this will output warnings and display error messages from Vue.js as well as allow the use of [the Vue.js devtools](https://github.com/vuejs/vue-devtools).
 
 ### Production Build
 
-To run the website in production mode run `yarn prod`.
+To run the website in production mode run `yarn prod` or `npm run prod`.
 
 This will build the required assets and the run the website in production mode. No warnings or error messages will be displayed, and [the Vue.js devtools](https://github.com/vuejs/vue-devtools) will be disabled.
 

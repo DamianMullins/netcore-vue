@@ -1,8 +1,12 @@
 {
   "name": "netcore-vue",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "ASP.NET Core 2 web application with Vue.JS 2.5 and Server Side Rendering",
+  "author": "Damian Mullins <damian.mullins@just-eat.com> (http://www.damianmullins.com)",
+  "license": "ISC",
+  "engines": {
+    "node": ">=8.6.0"
+  },
   "scripts": {
     "build": "webpack",
     "build:prod": "webpack --env prod",
@@ -13,8 +17,6 @@
     "prod": "yarn build:prod && yarn dotnet:build && yarn dotnet:run:prod",
     "test": "jest"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "aspnet-prerendering": "3.0.1",
     "axios": "0.18.0",
