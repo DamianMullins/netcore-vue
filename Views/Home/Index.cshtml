@@ -24,14 +24,12 @@
             <div class="c-basket">
                 <p class="c-basket-heading">Your order</p>
 
-                <cache expires-after="@TimeSpan.FromSeconds(10)" vary-by-route="restaurantName">
-                    <div
-                        data-basket
-                        asp-prerender-module="Assets/js/server.renderBasket"
-                        asp-prerender-data="Model"></div>
+                <div
+                    data-basket
+                    asp-prerender-module="Assets/js/server.renderBasket"
+                    asp-prerender-data="Model"></div>
 
-                    <p>Current Time Inside Basket Cache Tag Helper: @DateTime.Now.</p>
-                </cache>
+                <p>Current Time Inside Basket Cache Tag Helper: @DateTime.Now.</p>
             </div>
         </div>
     </div>
