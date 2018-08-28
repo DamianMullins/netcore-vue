@@ -39,7 +39,6 @@ export default {
 
   computed: {
     ...mapGetters(["subtotal", "total"]),
-
     ...mapState(["basket"])
   }
 };

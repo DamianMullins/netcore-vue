@@ -21,7 +21,7 @@ module.exports = ({ bundleName, setGlobalState = false }) => {
                     ...setGlobalState ? {
                         globals: {
                             // window.__INITIAL_STATE__ will be the initial state of the Vuex store
-                            __INITIAL_STATE__: setGlobalState && data
+                            __INITIAL_STATE__: data
                         }
                     } : {}
                 });
